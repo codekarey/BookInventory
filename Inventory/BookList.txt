@@ -1,0 +1,12 @@
+﻿The Great Gatsby|F. Scott Fitzgerald|A man orders his life around one desire: to be reunited with Daisy Buchanan, the love he lost five years earlier.|True|8/2/19 12:00:00 AM
+The Lord of the Rings|J. R. R. Tolkien|The future of civilization rests in the fate of the One Ring, which has been lost for centuries but a young Hobbit named Frodo Baggins inherits the Ring and steps into legend.|False|8/1/19 12:00:00 AM
+The Adventures of Huckleberry Finn|Mark Twain|The story follows Huck Finn as he helps Jim, a runaway slave, to escape along the Mississippi River.|True|8/1/19 12:00:00 AM
+Alice in Wonderland|Lewis Carroll| It tells of a young girl named Alice falling through a rabbit hole into a fantasy world populated by peculiar, anthropomorphic creatures.|True|8/1/19 12:00:00 AM
+The Outsiders|S. E. Hinton|The novel tells the story of Ponyboy Curtis and his struggles with right and wrong in a society in which he believes that he is an outsider.|True|8/1/19 12:00:00 AM
+Animal Farm|George Orwell|A group of farm animals who rebel against their human farmer, hoping to create a society where the animals can be equal, free, and happy.|True|8/1/19 12:00:00 AM
+The Sun Also Rises|Ernest Hemingway|A group of disillusioned expatriates living in post–World War I Europe, searching for meaning as they travel, drink, and engage in romances during a Spanish fiesta.|True|8/1/19 12:00:00 AM
+The Alchemist|Paulo Coelho|An Andalusian shepherd boy named Santiago travels from his homeland in Spain to the Egyptian desert in search of a treasure buried in the Pyramids.|True|8/1/19 12:00:00 AM
+Game of Thrones| George R. R. Martin|The principal story chronicles the power struggle for the Iron Throne among the great Houses of Westeros following the death of King Robert|True|8/1/19 12:00:00 AM
+The Lorax| Dr.Seuss|It chronicles the plight of the environment and the Lorax is the titular character, who "speaks for the trees" and confronts the Once-ler, who causes environmental destruction.|True|8/1/19 12:00:00 AM
+The House of the Scorpion|Nancy Farmer|a dark, twisted, but ultimately hopeful story about a young clone named Matt who grows up in a dystopian world under the control of a drug lord.|True|8/1/19 12:00:00 AM
+Bark|Lorrie Moore|Eight short stories touch on many common themes, including loss, marriage, aging, unhappy endings, and cruelty.|True|8/2/19 12:00:00 AM
