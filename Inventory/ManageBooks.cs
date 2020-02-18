@@ -40,8 +40,14 @@ namespace Inventory
             }
             Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         }
-        //adds a new book to inventory
-
+        //adds a new book to inventory used in a foreach()
+        public static void Add(Book newBook)
+        {
+            using(StreamWriter write = new StreamWriter("../../../BookList.txt", true))
+            {
+                write.WriteLine(newBook);
+            }
+        }
         //checks out a book / change inventory, status, duedate, and amount
 
         //returns a book to inventory

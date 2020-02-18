@@ -16,23 +16,28 @@ namespace Inventory
                 int menuNum = TryParse();//validate input is int
                 switch (menuNum)
                 {
-                    case 1:
+                    case 1://List all books
                         ManageBooks.ListBooks();
                         break;
-                    case 2:
+                    case 2://Adds a new book
+                        string title = Get("Enter the Title:");
+                        string author = Get("Enther the Author:");
+                        string about = Get("What the book is about?");
+                        Book newBook = new Book(title, author, about, true, DateTime.Today);
+                        ManageBooks.Add(newBook);
+                        Console.WriteLine("Thank you for adding "+title+" by "+author+" to our library");
                         break;
-                    case 3:
+                    case 3://Checkout a book
                         break;
-                    case 4:
+                    case 4://Return a book
                         break;
-                    case 5:
+                    case 5://Search
                         break;
                     default:
                         break;
                 }
             }
         }
-    
         public static int TryParse()
         {
             bool s = true;
@@ -51,6 +56,11 @@ namespace Inventory
                 }
             }
             return 0;
+        }
+        public static string Get(string prompt)
+        {
+            Console.WriteLine(prompt);
+            return Console.ReadLine();
         }
     }
 }
