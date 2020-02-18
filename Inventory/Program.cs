@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Inventory
 {
     class Program
     {
+        static List<Book> books = new List<Book>();
         static void Main(string[] args)
         {
             //public book list to add/edit/delete items
+            ManageBooks.BookStream(books);
 
             bool menu = true;
             while (menu)
@@ -28,6 +31,8 @@ namespace Inventory
                         Console.WriteLine("Thank you for adding "+title+" by "+author+" to our library");
                         break;
                     case 3://Checkout a book
+                        
+                        ManageBooks.CheckOut(books);
                         break;
                     case 4://Return a book
                         break;
