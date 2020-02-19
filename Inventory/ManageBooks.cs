@@ -98,18 +98,18 @@ namespace Inventory
                     }
                 }
             }
-
         }
         //returns a book to inventory
-        public static void Return(List<Book> books)
+        public static UserFees Return(List<Book> books, UserFees user)
         {
+             
             bool isfound = false;
             Console.WriteLine("Enter the title of the book you'd like to return.");
             string title = Console.ReadLine().ToLower();
             
             foreach(Book book in books)//check for title match(only show titles checked out, check if returned ontime
             {
-                if (title.Contains(book.Title.ToLower())&&book.StatusCheck==false)
+                if (title.Contains(book.Title.ToLower())&&book.StatusCheck==false)//matches title and is checked out
                 {
                     isfound = true;
                     Console.WriteLine("Is "+book.StatusCheck+" by "+book.Author+" the book you are returning? [ Y ]  [ N ]");
@@ -118,10 +118,13 @@ namespace Inventory
                     {
                         if (book.Due.Ticks < DateTime.Now.Ticks) //not returned on time = late fees & hold on checkouts(name)
                         {
-                            var daysLate = Book.DueDate().Subtract(book.Due);
-                            Console.WriteLine("Thank you for returning this but it is " + (daysLate.Days - 1) + " days passed the due date.\n" +
-                                "We charge a quarter a day, so that totals to " + (daysLate.Days - 1) * .250 + " in late fees\n" +
-                                "If you want to checkout another book you must first take care of the fee in your account.");
+                            var daysLate = (Book.DueDate().Subtract(book.Due).Days) -1;
+                            double fee = (daysLate)* .25;
+                            Console.WriteLine("\nThank you for returning this but it is " + (daysLate) + " days passed the due date.\n" +
+                                "We charge a quarter a day, so that totals to " +fee+" in late fees\n" +
+                                "If you want to checkout another book you must first take care of the fee in your account.\n"); 
+                            user.LateFee = fee;
+                            user.Good = false;
                         }
                         book.StatusCheck = true;
                         book.Due = Book.DueDate();
@@ -134,6 +137,7 @@ namespace Inventory
                     Console.WriteLine("Sorry, we dont have a title checked out in our library by that name.");
                     isfound = false;
                 }
+            return user;
             }
         //search for a book by title / author / about
 

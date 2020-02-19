@@ -8,6 +8,10 @@ namespace Inventory
         static List<Book> books = new List<Book>();
         static void Main(string[] args)
         {
+
+            Console.WriteLine("Hello, please enter the name that will be used for your account.");
+            string name = Console.ReadLine();
+            UserFees user = new UserFees(name, 0, true);
             //public book list to add/edit/delete items
             ManageBooks.BookStream(books);
 
@@ -15,14 +19,14 @@ namespace Inventory
             while (menu)
             {
                 Console.WriteLine("\n Welcome to your inventory menu, please enter the # matching the option you want.\n\n" +
-                    "[ 1 ]List Books  [ 2 ]Add Book  [ 3 ]Checkout  [ 4 ]Return  [ 5 ]Search ");
+                    "[ 1 ]List Books  [ 2 ]Add Book  [ 3 ]Checkout  [ 4 ]Return  [ 5 ]Search [ 6 ] Fees");
                 int menuNum = TryParse();//validate input is int
                 switch (menuNum)
                 {
-                    case 1://List all books
+                    case 1://List all book
                         ManageBooks.ListBooks();
                         break;
-                    case 2://Adds a new book
+                    case 2://Adds a new book 
                         string title = Get("Enter the Title:");
                         string author = Get("Enther the Author:");
                         string about = Get("What the book is about?");
@@ -30,13 +34,34 @@ namespace Inventory
                         ManageBooks.Add(newBook);
                         Console.WriteLine("Thank you for adding "+title+" by "+author+" to our library");
                         break;
-                    case 3://Checkout a book
-                        ManageBooks.CheckOut(books);
+                    case 3://Checkout a book : get name
+                        if (name.Contains(user.Name) && user.Good)
+                        {
+                            ManageBooks.CheckOut(books);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Sorry "+user.Name+" but you have to pay your late fees before you check out a new book.");
+                        }
                         break;
-                    case 4://Return a book
-                        ManageBooks.Return(books);
+                    case 4://Return a book: get name
+                        user = ManageBooks.Return(books, user);
                         break;
                     case 5://Search
+                        break;
+                    case 6:
+                        Console.WriteLine(user.Name+" Account\n***************\n" +
+                            " : \n-Can Checkout: "+user.Good+"\n-Fees: "+user.LateFee);
+                        if (!user.Good)
+                        {
+                            Console.WriteLine("Would you like to pay your late fee of "+user.LateFee+"  [ Y ]  [ N ]");
+                            if (Console.ReadLine().ToLower() == "y")
+                            {
+                                user.LateFee = 0;
+                                user.Good = true;
+                                Console.WriteLine("Thank you for taking care of that, now you can checkout books.");
+                            }
+                        }
                         break;
                     default:
                         break;
