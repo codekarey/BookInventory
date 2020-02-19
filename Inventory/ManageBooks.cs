@@ -101,7 +101,40 @@ namespace Inventory
 
         }
         //returns a book to inventory
-
+        public static void Return(List<Book> books)
+        {
+            bool isfound = false;
+            Console.WriteLine("Enter the title of the book you'd like to return.");
+            string title = Console.ReadLine().ToLower();
+            
+            foreach(Book book in books)//check for title match(only show titles checked out, check if returned ontime
+            {
+                if (title.Contains(book.Title.ToLower())&&book.StatusCheck==false)
+                {
+                    isfound = true;
+                    Console.WriteLine("Is "+book.StatusCheck+" by "+book.Author+" the book you are returning? [ Y ]  [ N ]");
+                    string returning = Console.ReadLine().ToLower();
+                    if (returning == "y" || returning == "yes")
+                    {
+                        if (book.Due.Ticks < DateTime.Now.Ticks) //not returned on time = late fees & hold on checkouts(name)
+                        {
+                            var daysLate = Book.DueDate().Subtract(book.Due);
+                            Console.WriteLine("Thank you for returning this but it is " + (daysLate.Days - 1) + " days passed the due date.\n" +
+                                "We charge a quarter a day, so that totals to " + (daysLate.Days - 1) * .250 + " in late fees\n" +
+                                "If you want to checkout another book you must first take care of the fee in your account.");
+                        }
+                        book.StatusCheck = true;
+                        book.Due = Book.DueDate();
+                        Console.WriteLine(book.ToString());
+                    }  
+                }
+            }
+            if (!isfound)
+                {
+                    Console.WriteLine("Sorry, we dont have a title checked out in our library by that name.");
+                    isfound = false;
+                }
+            }
         //search for a book by title / author / about
 
 

@@ -9,5 +9,5 @@ The Alchemist|Paulo Coelho|An Andalusian shepherd boy named Santiago travels fro
 Game of Thrones| George R. R. Martin|The principal story chronicles the power struggle for the Iron Throne among the great Houses of Westeros following the death of King Robert|True|8/1/19 12:00:00 AM
 The Lorax| Dr.Seuss|It chronicles the plight of the environment and the Lorax is the titular character, who "speaks for the trees" and confronts the Once-ler, who causes environmental destruction.|True|8/1/19 12:00:00 AM
 The House of the Scorpion|Nancy Farmer|a dark, twisted, but ultimately hopeful story about a young clone named Matt who grows up in a dystopian world under the control of a drug lord.|True|8/1/19 12:00:00 AM
-Bark|Lorrie Moore|Eight short stories touch on many common themes, including loss, marriage, aging, unhappy endings, and cruelty.|True|8/2/19 12:00:00 AM
-For Whom The Bell Tolls|Ernest Hemingway|Loyalty and courage, love and defeat, and the tragic death of an ideal.|True|2/18/2020 12:00:00 AM
+Bark|Lorrie Moore|Eight short stories touch on many common themes, including loss, marriage, aging, unhappy endings, and cruelty.|False|2/1/2020 12:00:00 AM
+For Whom The Bell Tolls|Ernest Hemingway|Loyalty and courage, love and defeat, and the tragic death of an ideal.|False|2/10/2020 12:00:00 AM

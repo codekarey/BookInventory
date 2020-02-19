@@ -31,10 +31,10 @@ namespace Inventory
                         Console.WriteLine("Thank you for adding "+title+" by "+author+" to our library");
                         break;
                     case 3://Checkout a book
-                        
                         ManageBooks.CheckOut(books);
                         break;
                     case 4://Return a book
+                        ManageBooks.Return(books);
                         break;
                     case 5://Search
                         break;

@@ -21,15 +21,10 @@ namespace Inventory
             Due = due;
         }
 
-        public DateTime DueDate()
+        public static DateTime DueDate()
         {
             return DateTime.Today;
         }
-
-        //public override string Status()
-        //{
-        //    return null;
-        //}
 
         public override string ToString() //format to store book/list inventory
         {
