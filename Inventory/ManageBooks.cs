@@ -64,9 +64,9 @@ namespace Inventory
             return newBook;
         }
         //checks out a book / change inventory, status, and duedate
-        public static void CheckOut(List<Book> books)
+        public static List<Book> CheckOut(List<Book> books, List<Book> userBooks)
         {
-            
+
             bool search = true;
             while (search)
             {
@@ -90,6 +90,7 @@ namespace Inventory
                             b.StatusCheck = false;
                             b.Due = DateTime.Today.AddDays(14);
                             Console.WriteLine("\n\tOkay! "+b.Title+" is due back on "+b.Due.Month+"-"+b.Due.Day+"-"+b.Due.Year);
+                            userBooks.Add(b);
                             search = true;
                             other = false; //if no books match
                         } 
@@ -111,7 +112,9 @@ namespace Inventory
                         }
                     }
                 }
+
             }
+            return userBooks;
         }
         //returns a book to inventory
         public static UserFees Return(List<Book> books, UserFees user)

@@ -5,13 +5,14 @@ namespace Inventory
 {
     class Program
     {
+        static List<Book> userBooks = new List<Book>();
         static List<Book> books = new List<Book>();
         static void Main(string[] args)
         {
 
             Console.WriteLine("Hello, please enter the name that will be used for your account.");
             string name = Console.ReadLine();
-            UserFees user = new UserFees(name, 0, true);
+            UserFees user = new UserFees(name, 0, true, userBooks);
             //public book list to add/edit/delete items
             ManageBooks.BookStream(books);
 
@@ -19,7 +20,7 @@ namespace Inventory
             while (menu)
             {
                 Console.WriteLine("\n Welcome to your inventory menu, please enter the # matching the option you want.\n\n" +
-                    "[ 1 ]List Books  [ 2 ]Add Book  [ 3 ]Checkout  [ 4 ]Return  [ 5 ]Search [ 6 ] Fees");
+                    "[ 1 ]List Books  [ 2 ]Add Book  [ 3 ]Checkout  [ 4 ]Return  [ 5 ]Search [ 6 ]Account");
                 int menuNum = TryParse();//validate input is int
                 switch (menuNum)
                 {
@@ -39,7 +40,7 @@ namespace Inventory
                     case 3://Checkout a book : get name
                         if (name.Contains(user.Name) && user.Good)
                         {
-                            ManageBooks.CheckOut(books);
+                            ManageBooks.CheckOut(books, userBooks);
                         }
                         else
                         {
@@ -50,10 +51,22 @@ namespace Inventory
                         user = ManageBooks.Return(books, user);
                         break;
                     case 5://Search
+                        //Search by author
+
+                        //Search by about
+
+                        //Search keyword
                         break;
-                    case 6:
-                        Console.WriteLine(user.Name+" Account\n***************\n" +
-                            " : \n-Can Checkout: "+user.Good+"\n-Fees: "+user.LateFee);
+                    case 6: //User acount details: book fees, checkout status, and current books checked out
+                        Console.WriteLine("\n"+  user.Name+" Account\n***************\n" +
+                            "\n| Can Checkout: "+user.Good+"\n| Fees: "+user.LateFee+"\n| Books Out - - - - - - - - - - - v");
+                        if (userBooks != null)
+                        {
+                            foreach(Book book in userBooks)
+                            {
+                                Console.WriteLine("| Book : " + book.Title + " by " + book.Author + ". Due back: "+book.Due.Month+"-"+book.Due.Day+"-"+book.Due.Year);
+                            }
+                        }
                         if (!user.Good)
                         {
                             Console.WriteLine("Would you like to pay your late fee of "+user.LateFee+"  [ Y ]  [ N ]");

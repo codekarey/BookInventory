@@ -11,4 +11,3 @@ The Lorax| Dr.Seuss|It chronicles the plight of the environment and the Lorax is
 The House of the Scorpion|Nancy Farmer|a dark, twisted, but ultimately hopeful story about a young clone named Matt who grows up in a dystopian world under the control of a drug lord.|True|8/1/2019 12:00:00 AM
 Bark|Lorrie Moore|Eight short stories touch on many common themes, including loss, marriage, aging, unhappy endings, and cruelty.|False|3/4/2020 12:00:00 AM
 For Whom The Bell Tolls|Ernest Hemingway|Loyalty and courage, love and defeat, and the tragic death of an ideal.|False|2/10/2020 12:00:00 AM
-Title|Author|A really good story.|False|3/4/2020 12:00:00 AM
