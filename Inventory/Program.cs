@@ -24,6 +24,7 @@ namespace Inventory
                 switch (menuNum)
                 {
                     case 1://List all book
+                        ManageBooks.Update(books);
                         ManageBooks.ListBooks();
                         break;
                     case 2://Adds a new book 
@@ -31,7 +32,8 @@ namespace Inventory
                         string author = Get("Enther the Author:");
                         string about = Get("What the book is about?");
                         Book newBook = new Book(title, author, about, true, DateTime.Today);
-                        ManageBooks.Add(newBook);
+                        books.Add(ManageBooks.Add(newBook));
+                        ManageBooks.Update(books);
                         Console.WriteLine("Thank you for adding "+title+" by "+author+" to our library");
                         break;
                     case 3://Checkout a book : get name

@@ -25,6 +25,19 @@ namespace Inventory
             reader.Close();
             return bookList;
         }
+        //updates books
+        public static void Update(List<Book> books)
+        {
+            using (StreamWriter writer = new StreamWriter("../../../BookList.txt", false))
+            {
+                foreach (Book b in books)
+                {
+                    writer.WriteLine(b);
+                }
+                writer.Close();
+            }
+        }
+
         //prints list of book(title, author, and about
         public static void ListBooks()
         {
@@ -42,12 +55,13 @@ namespace Inventory
             Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         }
         //adds a new book to inventory used in a foreach()
-        public static void Add(Book newBook)
+        public static Book Add(Book newBook)
         {
             using(StreamWriter write = new StreamWriter("../../../BookList.txt", true))
             {
                 write.WriteLine(newBook);
             }
+            return newBook;
         }
         //checks out a book / change inventory, status, and duedate
         public static void CheckOut(List<Book> books)
@@ -141,6 +155,7 @@ namespace Inventory
             }
         //search for a book by title / author / about
 
+        //
 
     }
 }
